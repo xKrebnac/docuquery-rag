@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd E:/git/docuquery-rag && pip install -q -r requirements.txt 2>&1 | tail -5)",
+      "Bash(cd E:/git/docuquery-rag && python -m pytest tests/test_ingestor.py -v 2>&1)",
+      "Bash(cd E:/git/docuquery-rag && python -m pytest tests/ -v 2>&1)",
+      "Bash(cd E:/git/docuquery-rag && pip install -q openai chromadb 2>&1 | tail -5)",
+      "Bash(cd E:/git/docuquery-rag && python -m pytest tests/test_embedder.py -v 2>&1)",
+      "Bash(python -c \"import sqlite3; print\\(sqlite3.sqlite_version\\)\")",
+      "Bash(pip install:*)",
+      "Bash(pip show:*)",
+      "Bash(cd E:/git/docuquery-rag && python -m pytest tests/test_retriever.py -v 2>&1)"
+    ]
+  }
+}
