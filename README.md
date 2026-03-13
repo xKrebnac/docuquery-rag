@@ -6,13 +6,13 @@ DocuQuery ist eine lokale Retrieval-Augmented-Generation-Pipeline, die beliebige
 
 ```
                           Ingestion
-  ┌──────────┐   chunk   ┌──────────┐   embed   ┌──────────┐   upsert  ┌──────────┐
+  ┌──────────┐   chunk   ┌──────────┐   embed    ┌──────────┐   upsert   ┌──────────┐
   │ Dokument │ ────────► │ Ingestor │ ─────────► │ Embedder │ ─────────► │ ChromaDB │
   │ .txt/.pdf│           │          │            │  ada-002 │            │  (lokal) │
   └──────────┘           └──────────┘            └──────────┘            └──────────┘
 
                           Query
-  ┌──────────┐   embed   ┌──────────┐   search  ┌──────────┐  generate  ┌──────────┐
+  ┌──────────┐   embed   ┌──────────┐   search   ┌──────────┐  generate  ┌──────────┐
   │  Frage   │ ────────► │Retriever │ ─────────► │ ChromaDB │ ─────────► │  GPT-3.5 │
   │          │           │          │ ◄───chunks─│          │            │  -turbo  │
   └──────────┘           └──────────┘            └──────────┘            └──────────┘
